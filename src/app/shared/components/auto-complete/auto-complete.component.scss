@@ -1,0 +1,19 @@
+.autoComplete {
+
+    width: 80%;
+    margin: 0 auto;
+
+    &__form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        &--w100 {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

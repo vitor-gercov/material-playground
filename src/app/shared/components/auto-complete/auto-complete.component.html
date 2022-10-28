@@ -1,0 +1,26 @@
+<section class="autoComplete">
+    <h1 class="autoComplete__title">
+        Auto-complete
+    </h1>
+    <div class="autoComplete__options">
+        <mat-slide-toggle [(ngModel)]="foodOptionsAreBeingFiltered"
+            aria-label="As opções do auto completar estão sendo filtradas quando você digita">
+            Filtrar valores ao escrever
+        </mat-slide-toggle>
+    </div>
+    <form class="autoComplete__form">
+        <mat-form-field class="autoComplete__form--w100" appearance="fill">
+            <mat-label>
+                Comida favorita
+            </mat-label>
+            <input matInput type="text" placeholder="Escolha uma opção" aria-label="Comida favorita" matInput
+                [formControl]="favoriteFoodFormControl" [matAutocomplete]="autoCompleteElement">
+
+            <mat-autocomplete #autoCompleteElement="matAutocomplete">
+                <mat-option *ngFor="let foodOption of foodOptionsFiltered$ | async" [value]="foodOption">
+                    {{ foodOption }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</section>
